@@ -3,6 +3,7 @@ import streamlit as st
 from actors.page import show_actors
 from genres.page import show_genres
 from movies.page import show_movies
+from reviews.page import show_reviews
 
 
 def main():
@@ -26,7 +27,7 @@ def main():
         show_movies()
     
     if menu_options == "Avaliações":
-        st.write("Avaliações")
+        show_reviews()
 
 
 

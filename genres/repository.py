@@ -26,3 +26,17 @@ class GenreRepository:
             logout()
             return None
         raise Exception(f'Erro ao obter dados da API. Status Code: {response.status_code}')
+    
+    def create_genre(self, genre):
+        response = requests.post(
+            self.__genre_url,
+            headers=self.__header,
+            json=genre,
+        )
+
+        if response.status_code == 201:
+            return response.json()
+        if response.status_code == 401:
+            logout()
+            return None
+        raise Exception(f'Erro ao cadastrar gênero na API. Status Code: {response.status_code}')

@@ -1,6 +1,5 @@
 import requests
 import streamlit as st
-import time
 from login.service import logout
 
 
@@ -33,7 +32,7 @@ class GenreRepository:
         )
         if response.status_code == 201:
             return response.json()
-        
+
         if response.status_code == 401:
             logout()
             return None

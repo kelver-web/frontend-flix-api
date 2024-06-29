@@ -8,6 +8,7 @@ class MovieRepository:
     def __init__(self):
         self.__base_url = 'https://kelver.pythonanywhere.com/api/v1/'
         self.__movies_url = f'{self.__base_url}movies/'
+        self.__movies_stats = 'https://kelver.pythonanywhere.com/movies/stats/'
         self.__headers = {
             'Authorization': f'Bearer {st.session_state.token}'
         }
@@ -37,3 +38,16 @@ class MovieRepository:
         if response.status_code == 401:
             logout()
             return None
+
+    def get_movies_stats(self):
+        response = requests.get(
+            f'{self.__movies_stats}',
+            headers=self.__headers,
+        )
+
+        if response.status_code == 200:
+            return response.json()
+        if response.status_code == 401:
+            logout()
+            return None
+        raise Exception(f'Erro ao obter dados da API. Status code: {response.status_code}')

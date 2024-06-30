@@ -40,7 +40,6 @@ def show_movies():
         format='DD/MM/YYYY',
     )
 
-
     genre_service = GenreService()
     genres = genre_service.get_genres()
     genre_names = {genre['name']: genre['id'] for genre in genres}
@@ -53,7 +52,6 @@ def show_movies():
     selected_actors_ids = [actor_names[name] for name in selected_actors_names]
 
     resume = st.text_area("Sinopse", placeholder='Escreva a sinopse do filme aqui...')
-
 
     if st.button('Cadastrar'):
         new_movie = movie_service.create_movie(

@@ -29,7 +29,7 @@ def login(username, password):
         )
 
         time.sleep(.5)
-    
+
     else:                # | variable is token
         st.session_state.token = response.get('access')
         st.rerun()

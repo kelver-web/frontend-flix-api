@@ -32,7 +32,7 @@ def show_reviews():
     movie_service = MovieService()
     movies = movie_service.get_movies()
     movie_titles = {movie['title']: movie['id'] for movie in movies}
-   
+
     selected_movie_title = st.selectbox('Filme', list(movie_titles.keys()))
 
     stars = st.number_input(

@@ -24,7 +24,7 @@ class ActorRepository:
             logout()
             return None
         raise Exception(f'Erro ao obter dados da API. Status code: {response.status_code}')
-    
+
     def create_actor(self, actor):
         response = requests.post(
             self.__actors_url,

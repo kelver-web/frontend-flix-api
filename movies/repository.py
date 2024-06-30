@@ -25,7 +25,7 @@ class MovieRepository:
             logout()
             return None
         raise Exception(f'Erro ao obter dados da API. Status code: {response.status_code}')
-    
+
     def create_movie(self, movie):
         response = requests.post(
             self.__movies_url,

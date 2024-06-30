@@ -12,7 +12,7 @@ class ActorService:
         actors = self.actor_repository.get_actors()
         st.session_state.actors = actors
         return actors
-    
+
     def create_actor(self, name, birthday, nationality):
         actor = dict(
             name=name,

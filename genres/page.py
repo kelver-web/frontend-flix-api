@@ -33,46 +33,44 @@ def show_genres():
         new_genre = genre_service.create_genre(
             name=name,
         )
-        
+
         if new_genre:
             st.toast(f'Gênero {name} cadastrado con sucesso!', icon="✅")
-            st.markdown(
-                """
-                    <style>
-                            div[data-testid=stToast] {
-                                padding: 15px 25px 15px 10px;
-                                width: 20%;
-                                background-color: green;
-                                color: #ffffff;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                            }
-                    </style>
+            st.markdown("""
+                <style>
+                        div[data-testid=stToast] {
+                            padding: 15px 25px 15px 10px;
+                            width: 20%;
+                            background-color: green;
+                            color: #ffffff;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                </style>
                 """,
                 unsafe_allow_html=True
             )
 
             time.sleep(2)
             st.rerun()
-        
+
         else:
             st.toast(f':black[Opa, verifique os campos!]', icon="⚠️")
-            st.markdown(
-                """
-                    <style>
-                            div[data-testid=stToast] {
-                                padding: 15px 25px 15px 10px;
-                                width: 20%;
-                                background-color: #FF6347;
-                                color: #000000;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                            }
-                    </style>
+            st.markdown("""
+                <style>
+                        div[data-testid=stToast] {
+                            padding: 15px 25px 15px 10px;
+                            width: 20%;
+                            background-color: #FF6347;
+                            color: #000000;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                </style>
                 """,
-                unsafe_allow_html=True
-            )
+            unsafe_allow_html=True
+        )
 
-            time.sleep(.5)
+        time.sleep(.5)

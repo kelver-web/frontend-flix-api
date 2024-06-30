@@ -6,9 +6,6 @@ import time
 from actors.service import ActorService
 
 
-
-
-
 def show_actors():
     actor_service = ActorService()
     actors = actor_service.get_actors()
@@ -48,40 +45,37 @@ def show_actors():
 
         if new_actor:
             st.toast(f':black[Ator/Atriz "{name}" cadastrado com sucesso]', icon='🎉')
-            st.markdown(
-                """
-                    <style>
-                            div[data-testid=stToast] {
-                                padding: 15px 25px 15px 10px;
-                                width: 20%;
-                                background-color: #3CB371;
-                                color: #ffffff;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                            }
-                    </style>
-                """,
-                unsafe_allow_html=True
+            st.markdown("""<style>
+                        div[data-testid=stToast] {
+                            padding: 15px 25px 15px 10px;
+                            width: 20%;
+                            background-color: #3CB371;
+                            color: #ffffff;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                                }
+                            </style>
+                        """,
+            unsafe_allow_html=True
             )
 
         else:
             st.toast(f':black[Opa, verifique os campos!]', icon="⚠️")
-            st.markdown(
-                """
-                    <style>
-                            div[data-testid=stToast] {
-                                padding: 15px 25px 15px 10px;
-                                width: 20%;
-                                background-color: #FF6347;
-                                color: #000000;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                            }
-                    </style>
+            st.markdown("""
+                <style>
+                    div[data-testid=stToast] {
+                        padding: 15px 25px 15px 10px;
+                        width: 20%;
+                        background-color: #FF6347;
+                        color: #000000;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                </style>
                 """,
-                unsafe_allow_html=True
+            unsafe_allow_html=True
             )
 
             time.sleep(.5)

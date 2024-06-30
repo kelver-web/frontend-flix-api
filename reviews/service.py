@@ -13,7 +13,7 @@ class ReviewService:
         reviews = self.review_repository.get_reviews()
         st.session_state.reviews = reviews
         return reviews
-    
+
     def create_review(self, movie, stars, comments):
         review = dict(
             movie=movie,

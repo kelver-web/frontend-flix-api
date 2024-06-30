@@ -25,6 +25,6 @@ class MovieService:
         new_movie = self.movie_repository.create_movie(movie)
         st.session_state.movies.append(new_movie)
         return new_movie
-    
+
     def get_movies_stats(self):
         return self.movie_repository.get_movies_stats()

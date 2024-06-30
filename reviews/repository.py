@@ -25,7 +25,7 @@ class ReviewRepository:
             logout()
             return None
         raise Exception(f'Erro ao obter dados da API. Status code: {response.status_code}')
-    
+
     def create_review(self, review):
         response = requests.post(
             self.__reviews_url,

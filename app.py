@@ -1,5 +1,4 @@
 import streamlit as st
-import time
 
 from actors.page import show_actors
 from genres.page import show_genres

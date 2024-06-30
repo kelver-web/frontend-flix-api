@@ -8,11 +8,7 @@ class MovieService:
         self.movie_repository = MovieRepository()
 
     def get_movies(self):
-        if 'movies' in st.session_state:
-            return st.session_state.movies
-        movies = self.movie_repository.get_movies()
-        st.session_state.movies = movies
-        return movies
+        return self.movie_repository.get_movies()
 
     def create_movie(self, title, release_date, genre, actors, resume):
         movie = dict(

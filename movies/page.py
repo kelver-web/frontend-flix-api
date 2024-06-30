@@ -103,3 +103,4 @@ def show_movies():
             )
 
             time.sleep(.5)
+            st.rerun()

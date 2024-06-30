@@ -41,7 +41,7 @@ def show_reviews():
         max_value=5,
         step=1,
     )
-    comments = st.text_area(label='Comentário', max_chars=500)
+    comments = st.text_area(label='Comentário', max_chars=700)
 
     if st.button("Cadastrar"):
         new_review = review_service.create_review(

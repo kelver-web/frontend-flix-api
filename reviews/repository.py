@@ -18,7 +18,6 @@ class ReviewRepository:
             self.__reviews_url,
             headers=self.__headers,
         )
-
         if response.status_code == 200:
             return response.json()
         if response.status_code == 401:
